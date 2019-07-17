@@ -135,6 +135,26 @@ def list_board_status(bdlist):
                 print(deadmsg.format(x, y))
 
 
+def compare_boards(bd1, bd2, rowcolsize):
+    """
+    :param bd1: list of lists representing the first board
+    :param bd2: list of lists representing the second board
+    :param rowcolsize: size of the board
+    :return: True or False
+
+    bd1 and bd2 must be the same size i.e board must be the same dimensions
+    2 loops comparing the contents of two list of lists. It
+    it returns false mid loop if it finds a difference or if it
+    doesnt find a difference returns True
+    """
+
+    for x in range(rowcolsize):
+        for y in range(rowcolsize):
+            if bd1[x][y] != bd2[x][y]:
+                return False
+    return True
+
+
 # carry out a run using the sample board
 if __name__ == "__main__":
     # This function will print out the original board and the next generation after processing
@@ -161,6 +181,5 @@ if __name__ == "__main__":
         one that went in stop the loop and end the program
     2. Plot the board to produce a visual representation
     3. code a random starting board position 
-    4. unit tests for the program logic
-       
+    4. unit tests for the program logic       
     """
