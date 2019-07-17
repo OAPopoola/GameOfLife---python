@@ -138,17 +138,29 @@ def list_board_status(bdlist):
 # carry out a run using the sample board
 if __name__ == "__main__":
     # This function will print out the original board and the next generation after processing
-    board = [[0, 0, 0, 0],
+    board = [[1, 0, 0, 0],
              [1, 0, 0, 1],
              [0, 1, 1, 0],
-             [0, 0, 0, 0]]
-    print("Oririnal board is :", board)
+             [0, 0, 0, 1]]
+    print("Original board is :", board)
     # define a counter for a loop
     x = 0
     # build a loop with the new generated board as input
     # original board is printed once but all all the new generations are printed
     for x in range(51):
         # x-1 iterations
-            board = return_next_generation(board)
-            print(board)
-    print("Eno of simulation")
+        board = return_next_generation(board)
+        print(board)
+    print("End of simulation")
+    """
+    At this stage instead of just printing the newly generated board output it can 
+    be connected to a plotting engine to show the changes. The board could be designed 
+    like a chess board sized 4 x 4. One color for the dead cells and another for the cells are alive
+    So in summary the outstanding work is as follows
+    1. find a logical test on the board to end the simulations for example if the new board is the same as the 
+        one that went in stop the loop and end the program
+    2. Plot the board to produce a visual representation
+    3. code a random starting board position 
+    4. unit tests for the program logic
+       
+    """
