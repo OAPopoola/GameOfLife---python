@@ -143,4 +143,12 @@ if __name__ == "__main__":
              [0, 1, 1, 0],
              [0, 0, 0, 0]]
     print("Oririnal board is :", board)
-    print("New board is: ", return_next_generation(board))
+    # define a counter for a loop
+    x = 0
+    # build a loop with the new generated board as input
+    # original board is printed once but all all the new generations are printed
+    for x in range(51):
+        # x-1 iterations
+            board = return_next_generation(board)
+            print(board)
+    print("Eno of simulation")
